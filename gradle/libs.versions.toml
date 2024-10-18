@@ -14,7 +14,7 @@ spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 spring-security-test = { module = "org.springframework.security:spring-security-test" }
-fitko-fitconnect-sdk = "dev.fitko.fitconnect.sdk:client:2.3.0"
+fitko-fitconnect-sdk = "dev.fitko.fitconnect.sdk:client:2.3.1"
 
 [plugins]
 dependency-license-report = "com.github.jk1.dependency-license-report:2.9"
