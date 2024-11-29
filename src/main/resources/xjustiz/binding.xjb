@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jxb="https://jakarta.ee/xml/ns/jaxb" version="3.0">
+	<jxb:bindings schemaLocation="xjustiz_2600_zwangsvollstreckung_3_3.xsd" >
+            <jxb:bindings node="//xs:element[@name='auswahl_abnahmeVermoegensauskunftOderRuecksendungVollstreckungsunterlagen']/xs:complexType">
+                <jxb:class name="AuswahlAbnahmeVermoegensauskOderRuecksendeVollstr"/>
+            </jxb:bindings>
+    </jxb:bindings>
+</jxb:bindings>

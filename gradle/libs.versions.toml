@@ -21,6 +21,8 @@ jakarta-xml-ws = "jakarta.xml.ws:jakarta.xml.ws-api:3.0.0"
 jakarta-xml-bind = "jakarta.xml.bind:jakarta.xml.bind-api:4.0.0"
 jakarta-activation = "jakarta.activation:jakarta.activation-api:2.0.0"
 sun-xml-ws-jaxws = "com.sun.xml.ws:jaxws-rt:4.0.3"
+org-glassfish-jaxb-xjc = "org.glassfish.jaxb:jaxb-xjc:4.0.1"
+org-glassfish-jaxb-runtime = "org.glassfish.jaxb:jaxb-runtime:4.0.1"
 [plugins]
 dependency-license-report = "com.github.jk1.dependency-license-report:2.9"
 sonarqube = "org.sonarqube:6.0.1.5171"

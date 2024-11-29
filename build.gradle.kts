@@ -27,6 +27,7 @@ java {
 
 configurations { compileOnly { extendsFrom(annotationProcessor.get()) } }
 val jaxws by configurations.creating
+val jaxb by configurations.creating
 
 repositories { mavenCentral() }
 
@@ -53,8 +54,10 @@ dependencies {
     testImplementation(libs.spring.security.test)
     testImplementation(libs.archunit.junit5)
     testImplementation(libs.mockito.junit.jupiter)
-}
 
+    jaxb(libs.org.glassfish.jaxb.xjc)
+    jaxb(libs.org.glassfish.jaxb.runtime)
+}
 tasks {
     register<Test>("integrationTest") {
         description = "Runs the integration tests."
@@ -70,9 +73,25 @@ tasks {
         dependsOn(test)
         finalizedBy(jacocoTestReport)
     }
+    register("jaxb", JavaExec::class) {
+        doFirst {
+            mkdir("$buildDir/generated/src/main/java")
+        }
+        enabled = false
+        classpath(configurations["jaxb"])
+        mainClass = "com.sun.tools.xjc.XJCFacade"
+        args =
+            listOf(
+                "src/main/resources/xjustiz",
+                "-d",
+                "$buildDir/generated/src/main/java",
+                "-b",
+                "$projectDir/src/main/resources/xjustiz/binding.xjb",
+            )
+    }
     register("wsimport") {
         enabled = false
-        val destDir by extra("$buildDir/generated/main/java")
+        val destDir by extra("$buildDir/generated/src/main/java")
         doLast {
             ant.withGroovyBuilder {
                 mkdir(destDir)
@@ -93,8 +112,8 @@ tasks {
         }
     }
     compileJava {
-        dependsOn("wsimport")
-        source("$buildDir/generated/main/java")
+        dependsOn("wsimport", "jaxb")
+        source("$buildDir/generated/src/main/java")
     }
 
     check {
@@ -159,11 +178,16 @@ tasks {
     }
 }
 
+java.sourceSets["main"].java {
+    srcDirs("build/generated/src/main/java")
+}
+
 spotless {
     encoding("UTF-8")
     lineEndings = com.diffplug.spotless.LineEnding.UNIX
     java {
         encoding("Cp1252")
+        targetExclude("**/build/generated/**")
         removeUnusedImports()
         googleJavaFormat()
     }
