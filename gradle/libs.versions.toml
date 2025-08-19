@@ -13,7 +13,7 @@ spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-
 spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security" }
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
-spring-cloud-starter-kubernetes-client-config = "org.springframework.cloud:spring-cloud-starter-kubernetes-client-config:3.2.0"
+spring-cloud-starter-kubernetes-client-config = "org.springframework.cloud:spring-cloud-starter-kubernetes-client-config:3.3.0"
 #pin transient client-config protobuf dependency version to avoid CVE-2024-7254
 google-java-protobuf = "com.google.protobuf:protobuf-java:4.30.2"
 spring-security-test = { module = "org.springframework.security:spring-security-test" }
