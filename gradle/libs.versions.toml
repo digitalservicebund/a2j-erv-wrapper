@@ -15,7 +15,7 @@ spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-start
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 spring-cloud-starter-kubernetes-client-config = "org.springframework.cloud:spring-cloud-starter-kubernetes-client-config:3.3.0"
 #pin transient client-config protobuf dependency version to avoid CVE-2024-7254
-google-java-protobuf = "com.google.protobuf:protobuf-java:4.30.2"
+google-java-protobuf = "com.google.protobuf:protobuf-java:4.32.0"
 spring-security-test = { module = "org.springframework.security:spring-security-test" }
 fitko-fitconnect-sdk = "dev.fitko.fitconnect.sdk:client:2.5.0"
 [plugins]
