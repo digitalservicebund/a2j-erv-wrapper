@@ -17,7 +17,7 @@ spring-cloud-starter-kubernetes-client-config = "org.springframework.cloud:sprin
 #pin transient client-config protobuf dependency version to avoid CVE-2024-7254
 google-java-protobuf = "com.google.protobuf:protobuf-java:4.32.0"
 spring-security-test = { module = "org.springframework.security:spring-security-test" }
-fitko-fitconnect-sdk = "dev.fitko.fitconnect.sdk:client:2.5.0"
+fitko-fitconnect-sdk = "dev.fitko.fitconnect.sdk:client:2.9.0"
 [plugins]
 dependency-license-report = "com.github.jk1.dependency-license-report:2.9"
 sonarqube = "org.sonarqube:6.3.1.5724"
